@@ -1,0 +1,371 @@
+
+    <!DOCTYPE html>
+    <html lang="en" data-ng-app="website">
+
+   
+    <head>
+
+
+        <meta charset="utf-8">
+        <title>Home</title>
+        <link rel="SHORTCUT ICON" href="mt-demo/59400/59460/mt-content/uploads/2017/03/favicon-0884dae2.ico?_build=1520859681" type="image/vnd.microsoft.icon" />
+
+        
+        <link rel="canonical" href="index.html" />
+        <link href="./iconfont/style.css" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="mt-includes/css/assets.minc3a1.css?_build=1520602070"/>
+        <link rel="stylesheet" href="mt-demo/59400/59460/mt-content/themes/mt-0884/css/stylesdae2.css?_build=1520859681"/>
+        <style>
+        @import url(http://fonts.googleapis.com/css?family=Comfortaa:300,regular,700|Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic|Oswald:200,300,regular,500,600,700&amp;subset=cyrillic-ext,greek,vietnamese,cyrillic,latin,latin-ext,greek-ext);
+    </style>
+    <link rel="stylesheet" href="mt-demo/59400/59460/mt-content/assets/styles7e87.css?_build=1520606353" id="moto-website-style"/>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCQz2ZaygiHbfAqQa2o66Ja2EtXVRooAQE",
+        authDomain: "shettyproduction-fce8c.firebaseapp.com",
+        databaseURL: "https://shettyproduction-fce8c.firebaseio.com",
+        projectId: "shettyproduction-fce8c",
+        storageBucket: "shettyproduction-fce8c.appspot.com",
+        messagingSenderId: "437140535080"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript">
+
+
+
+         function saveData(){
+
+        
+         var usersRef = firebase.database().ref("userInfo").push();
+
+        //console.log("fhsdhfghdgf");
+         var name = document.getElementById('field_name').value;
+       var email = document.getElementById('field_number').value;
+       var  Phone = document.getElementById('field_email').value;
+        var  message = document.getElementById('field_message').value;
+        
+       //var full_name = document.getElementById('first-name').value;
+       //var email = document.getElementById('mail').value;
+        usersRef.set({
+
+          name : name,
+          email : email,
+          // pickup_location : location_pick,
+          // drop_location : location_drop
+          Phone : Phone,
+          message :   message ,
+          
+        });
+        console.log("dskfmdnjvndkj");
+      }
+
+
+    </script>
+
+
+
+
+
+
+    </head>
+    <body class="moto-background">
+
+
+
+
+        <div class="page">
+
+            <header id="section-header" class="header moto-section" data-widget="section" data-container="section">
+                <div data-spacing="maaa" data-bg-image="2017/02/mt-0884-header-bg.jpg" style="background-image:url(mt-demo/59400/59460/mt-content/uploads/2017/02/header1.jpg);background-position:top;background-repeat:no-repeat;background-size:cover;" class="moto-widget moto-widget-block moto-background-fixed moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="block">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="moto-cell col-sm-12" data-container="container"><div class="moto-widget moto-widget-row row-fixed moto-justify-content_center" data-widget="row"><div class="container-fluid"><div class="row" data-container="container"><div class="moto-cell col-sm-2 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div data-spacing="zaaa" class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-zero moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_1"><span class="moto-color_custom5">.</span><a class="moto-link" data-id="9" data-action="page" href="index.html">Shettyproduction</a></p></div></div></div><div class="moto-cell col-sm-10 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div data-widget-id="wid__menu__5aa0cf4ed0e2b" class="moto-widget moto-widget-menu moto-preset-default moto-align-right moto-align-center_mobile-h moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-preset="default" data-widget="menu">
+                                <a href="#" class="moto-widget-menu-toggle-btn"><i class="moto-widget-menu-toggle-btn-icon fa fa-bars"></i></a>
+                                <ul class="moto-widget-menu-list moto-widget-menu-list_horizontal">
+                                    <li class="moto-widget-menu-item moto-widget-menu-item-has-submenu">
+                                        <a href="about/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-widget-menu-link-submenu moto-link">About<span class="fa moto-widget-menu-link-arrow"></span></a>
+                                       <!--  <ul class="moto-widget-menu-sublist">
+                                            <li class="moto-widget-menu-item">
+                                                <a href="events/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-2 moto-link">Events</a>
+                                            </li>
+                                            <li class="moto-widget-menu-item moto-widget-menu-item-has-submenu">
+                                                <a href="news/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-2 moto-widget-menu-link-submenu moto-link">News<span class="fa moto-widget-menu-link-arrow"></span></a>
+                                                <ul class="moto-widget-menu-sublist">
+                                                  
+                                                    <li class="moto-widget-menu-item">
+                                                        <a href="contacts/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-3 moto-link">Contacts</a>
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li class="moto-widget-menu-item">
+                                                <a href="sound-design/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-2 moto-link">Sound design</a>
+                                            </li>
+                                        </ul>
+ -->
+                                    </li><li class="moto-widget-menu-item">
+                                        <a href="engineers/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Artists</a>
+                                    </li><li class="moto-widget-menu-item">
+                                        <a href="studio/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Studio</a>
+                                    </li><li class="moto-widget-menu-item">
+                                        <a href="services/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Services</a>
+                                    </li><li class="moto-widget-menu-item">
+                                        <a href="works/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Works</a>
+                                    </li>
+									
+									<li class="moto-widget-menu-item">
+                                        <a href="contacts/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Contacts</a>
+                                    </li>        </ul>
+                                </div></div></div></div></div><div data-widget-id="wid__spacer__5aa0cf4ed5226" class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-medium moto-spacing-left-auto moto-visible-on_tablet"
+                                data-widget="spacer" data-preset="default" data-spacing="lama" data-visible-on="tablet">
+                                <div class="moto-widget-spacer-block" style="height:20px"></div>
+                            </div><div data-spacing="aaaa" class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="row"><div class="container-fluid"><div class="row" data-container="container"><div class="moto-cell col-sm-12 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div data-spacing="aama" class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-medium moto-spacing-left-auto" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_2" style="text-align: center;">Create your best record!</p><p class="moto-text_system_2" style="text-align: center;"><br></p><p class="moto-text_system_5" style="text-align: center;">SHETTY PRODUCTION<br></p><p class="moto-text_system_2" style="text-align: center;"><br></p><p class="moto-text_system_2" style="text-align: center;">Top Recording Studios, Mixing &amp; Mastering<br>Engineers, Producers<br></p></div></div><div data-widget-id="wid__button__5aa0cf4ed794c" class="moto-widget moto-widget-button moto-preset-default moto-align-center moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto " data-widget="button">
+                               <a href="works/index.html"    class="moto-widget-button-link moto-size-large moto-link"><span class="fa moto-widget-theme-icon"></span> <span class="moto-widget-button-label">Works</span></a>
+                            </div><div data-widget-id="wid__spacer__5aa0cf4ed8b53" class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto "
+                            data-widget="spacer" data-preset="default" data-spacing="laaa" data-visible-on="mobile-v">
+                            <div class="moto-widget-spacer-block" style="height:15px"></div>
+                        </div></div></div></div></div>
+                        
+                </div>
+                    </div>
+                </div>
+            </div>            
+        </header>
+
+        <section id="section-content" class="content page-9 moto-section" data-widget="section" data-container="section">
+            <div style="" data-spacing="lala" class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="moto-cell col-sm-12" data-container="container"><div class="moto-widget moto-widget-row row-fixed" data-widget="row"><div class="container-fluid"><div class="row" data-container="container"><div class="moto-cell col-sm-1 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"></div><div class="moto-cell col-sm-10 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_6" style="text-align: center;">ABOUT OUR STUDIO</p><p class="moto-text_normal" style="text-align: center;"><br></p><p class="moto-text_normal" style="text-align: center;">Create your best record!<br></p><p class="moto-text_normal" style="text-align: center;"><br></p><p class="moto-text_system_10" style="text-align: center;"><br></p><p class="moto-text_system_10" style="text-align: center;">Recording studios generally consist of three rooms: the studio itself, where the sound for the recording is created, the control room, where the sound from the studio is recorded and manipulated, and the machine room, where noisier equipment that may interfere with the recording process is kept.</p></div></div></div><div class="moto-cell col-sm-1 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"></div></div></div></div></div>
+                    </div>
+                </div>
+            </div><div style="" data-spacing="aala" class="moto-widget moto-widget-block moto-bg-color5_3 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="moto-cell col-sm-12" data-container="container"><div data-widget-id="wid__spacer__5aa0cf99c0f27" class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto "
+                            data-widget="spacer" data-preset="default" data-spacing="masa" data-visible-on="mobile-v">
+                            <div class="moto-widget-spacer-block" style="height:10px"></div>
+                        </div><div class="moto-widget moto-widget-row row-fixed" data-widget="row"><div class="container-fluid"><div class="row" data-container="container"><div class="moto-cell col-sm-4 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column">
+                            <div data-widget-id="wid__image__5aa0cf99c1f50" class="moto-widget moto-widget-image moto-preset-default moto-align-center moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-widget="image">
+                            <span class="moto-widget-image-link">
+                                <img src="./mt-demo/59400/59460/mt-content/uploads/2017/03/re.jpg" class="moto-widget-image-picture lazyload" data-id="148" title="" alt="">
+                            </span>
+                        </div><div data-spacing="asas" data-draggable-disabled="" class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-small moto-spacing-bottom-auto moto-spacing-left-small" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_8" style="text-align: center;"><a class="moto-link" data-action="url" target="_self" href="#">RECORDING</a></p><p class="moto-text_system_10" style="text-align: center;"><br></p><p class="moto-text_system_10" style="text-align: center;">Providing recording and rehearsal space to musicians throughout the area.<br></p></div></div></div><div class="moto-cell col-sm-4 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div data-widget-id="wid__image__5aa0cf99c375c" class="moto-widget moto-widget-image moto-preset-default moto-align-center moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-widget="image">
+                            <span class="moto-widget-image-link">
+                                <img data-src="./mt-demo/59400/59460/mt-content/uploads/2017/03/sd.jpg" class="moto-widget-image-picture lazyload" data-id="149" title="" alt="">
+                            </span>
+                        </div><div data-spacing="asas" class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-small moto-spacing-bottom-auto moto-spacing-left-small" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_8" style="text-align: center;"><a class="moto-link" data-action="url" target="_self" href="#">MIXING</a><br></p><p class="moto-text_system_10" style="text-align: center;"><br>Mixing is the process of combining the different sonic elements of recorded music.<br></p></div></div></div><div class="moto-cell col-sm-4 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div data-widget-id="wid__image__5aa0cf99c3a44" class="moto-widget moto-widget-image moto-preset-default moto-align-center moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-widget="image">
+                            <span class="moto-widget-image-link">
+                                <img data-src="./mt-demo/59400/59460/mt-content/uploads/2017/03/pr.jpg" class="moto-widget-image-picture lazyload" data-id="150" title="" alt="">
+                            </span>
+                        </div><div data-spacing="asas" class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-small moto-spacing-bottom-auto moto-spacing-left-small" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_8" style="text-align: center;"><a class="moto-link" data-action="url" target="_self" href="#">MASTERING</a><br></p><p class="moto-text_system_10" style="text-align: center;"><br>Providing top audio mastering services for local and national artists and production companies.<br></p></div></div></div></div></div></div></div>
+                    </div>
+                </div>
+            </div>
+			<div style="" data-spacing="lala" class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block">
+                
+						
+                       
+			<div data-bg-image="2017/02/mt-0884-content-bg01.jpg" style="background-image:url(mt-demo/59400/59460/mt-content/uploads/2017/02/header1.jpg);background-position:bottom;background-repeat:no-repeat;background-size:cover;" data-spacing="lala" class="moto-widget moto-widget-block moto-background-fixed moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="moto-cell col-sm-12" data-container="container"><div class="moto-widget moto-widget-row row-fixed" data-widget="row"><div class="container-fluid"><div class="row" data-container="container"><div class="moto-cell col-sm-12 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div data-spacing="aaaa" class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_6" style="text-align: center;"><span class="moto-color5_5">A GREAT WAY TO SHARE MUSIC WITH PEOPLE</span><br></p><br></div></div><div data-spacing="sama" class="moto-widget moto-widget-row moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-medium moto-spacing-left-auto" data-widget="row"><div class="container-fluid"><div class="row" data-container="container"><div class="moto-cell col-sm-1 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"></div><div class="moto-cell col-sm-10 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_9" style="text-align: center;"><span class="moto-color5_5">Are you a music producer? Help us to make our events brighter and collaborate with us. We love music of all genres.<br></span></p></div></div></div><div class="moto-cell col-sm-1 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"></div></div></div></div><div data-widget-id="wid__button__5aa0cf99c4ce8" class="moto-widget moto-widget-button moto-preset-default moto-align-center moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto " data-widget="button">
+                          
+                        </div></div></div></div></div></div>
+                    </div>
+                </div>
+            </div>
+			
+                           
+
+			
+			<div style="" data-spacing="lala" class="moto-widget moto-widget-block moto-bg-color5_3 moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="moto-cell col-sm-12" data-container="container"><div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_6" style="text-align: center;">GET IN TOUCH<br></p><p class="moto-text_normal" style="text-align: center;"><br>Contact us to record a song</p></div></div><div data-spacing="maaa" class="moto-widget moto-widget-row row-fixed moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="row"><div class="container-fluid"><div class="row" data-container="container"><div class="moto-cell col-sm-4 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"></div><div class="moto-cell col-sm-4 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div data-widget-id="wid__contact_form__5aa0cf99ca470" class="moto-widget moto-widget-contact_form moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto  " data-preset="default" data-widget="contact_form" data-spacing="aaaa">
+                            <div ng-controller="widget.ContactForm.Controller" ng-init="hash = '2@eyJoIjoiTDZNZTN6Y2tcL2tVQTNZZFFwNW5ERmViSThZdzJuMUNScGpPMVhsWnMrWXM9IiwiaSI6IlJRRkZJQjlOVzJpdXpJOStIclk2YWc9PSIsInYiOiJwUHZiVnl5VTRGSlVTdXZQKzkzTlVqeFVaMzEyMzUxRXdKWTRtQjlYZ0JMU3A4RzJTaU1DcnUyYzNYclMxUll5RU1WZXJCY1ZcLzFOVmJJTjFVWmNqMFE9PSJ9'">
+
+                                <form class="moto-widget-contact_form-form" role="form" name="contactForm" ng-submit="submit()" novalidate>
+                                    <div ng-show="sending" class="contact-form-loading"></div>
+                                    
+                                    
+                                    
+                                    <div class="moto-widget-contact_form-group">
+                                        <label for="field_name" class="moto-widget-contact_form-label">Name</label>
+                                        <input type="text" class="moto-widget-contact_form-field moto-widget-contact_form-input" placeholder="Name *" id="field_name" />
+                                      
+                                    </div>
+
+                                     <div class="moto-widget-contact_form-group">
+                                        <label for="field_name" class="moto-widget-contact_form-label">Phone Number</label>
+                                        <input type="Number" class="moto-widget-contact_form-field moto-widget-contact_form-input" placeholder="Phone Number *" id="field_number" />
+                                      
+                                    </div>
+                                   <!-- 
+                                    <div class="moto-widget-contact_form-group">
+                                        <label for="field_email" class="moto-widget-contact_form-label">E-mail</label>
+                                        <input type="text" class="moto-widget-contact_form-field moto-widget-contact_form-input" placeholder="E-mail *"  ng-blur="validate('email')" required  ng-model-options="{ updateOn: 'blur' }" name="email" id="field_email" ng-model="message.email"/>
+                                        <span class="moto-widget-contact_form-field-error ng-cloak" ng-cloak ng-show="contactForm.email.$invalid && !contactForm.email.$pristine && !contactForm.email.emailInvalid" >Field is required</span>
+                                        <span class="moto-widget-contact_form-field-error ng-cloak" ng-cloak ng-show="contactForm.email.emailInvalid && !contactForm.email.$pristine" >Incorrect email</span>
+                                    </div> -->
+
+                                    <div class="moto-widget-contact_form-group">
+                                        <label for="field_name" class="moto-widget-contact_form-label">Email</label>
+                                        <input type="text" class="moto-widget-contact_form-field moto-widget-contact_form-input" placeholder="Email *" id="field_email" />
+                                      
+                                    </div>
+
+                                    <div class="moto-widget-contact_form-group">
+                                        <label for="field_name" class="moto-widget-contact_form-label">MESSAGE</label>
+                                        <input type="text" class="moto-widget-contact_form-field moto-widget-contact_form-input" placeholder="MESSAGE *" id="field_message" />
+                                      
+                                    </div>
+                                    
+                                    <div class="moto-widget-contact_form-success ng-cloak" ng-cloak ng-show="emailSent">
+                                        Your message was sent successfully
+                                    </div>
+
+                                    <div class="moto-widget-contact_form-danger ng-cloak" ng-cloak ng-show="emailError">
+                                        Sorry, your message was not sent
+                                    </div>
+
+                                    
+                                    <div class="moto-widget-contact_form-buttons">
+
+
+                                        <div class="moto-widget moto-widget-button moto-preset-2 moto-align-center" data-preset="2" data-align="center" id="save">
+                                           <!--  <a ng-click="submit();" class="moto-widget-button-link moto-size-medium"
+                                            data-size="medium"><span class="fa moto-widget-theme-icon"></span><span class="moto-widget-button-label">SEND MESSAGE</span></a> -->
+                                         <button type="submit"  onclick="saveData()" ng-click="submit();" class="moto-widget-button-link moto-size-medium"
+                                            data-size="medium">SEND MESSAGE</button>
+                                        </div>
+                                      
+
+                                        
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="moto-cell col-sm-4 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>            
+</section>
+    </div>
+
+    <footer id="section-footer" class="footer moto-section" data-widget="section" data-container="section" data-moto-sticky="{mode:'smallHeight', direction:'bottom'}">
+        <div style="" data-spacing="aaaa" class="moto-widget moto-widget-block moto-bg-color_custom2 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="block">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="moto-cell col-sm-12" data-container="container"><div data-widget-id="wid__spacer__5aa0d3096ffe2" class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto "
+                        data-widget="spacer" data-preset="default" data-spacing="maaa" data-visible-on="mobile-v">
+                        <div class="moto-widget-spacer-block" style="height:15px"></div>
+                    </div><div data-spacing="zasa" class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-zero moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p style="text-align: center;" class="moto-text_system_1"><span class="moto-color_custom5">.</span><a class="moto-link" data-id="9" data-action="page" href="index.html">Shettyproduction</a><br></p></div></div><div data-widget-id="wid__menu__5aa0d30970ae4" class="moto-widget moto-widget-menu moto-preset-2 moto-align-center moto-align-center_mobile-h moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-preset="2" data-widget="menu">
+                        <a href="#" class="moto-widget-menu-toggle-btn"><i class="moto-widget-menu-toggle-btn-icon fa fa-bars"></i></a>
+                        <ul class="moto-widget-menu-list moto-widget-menu-list_horizontal">
+                            <li class="moto-widget-menu-item">
+                                <a href="about/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">About</a>
+                            </li><li class="moto-widget-menu-item">
+                                <a href="engineers/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Artists
+                                </li><li class="moto-widget-menu-item">
+                                    <a href="studio/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Studio</a>
+                                </li><li class="moto-widget-menu-item">
+                                    <a href="services/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Services</a>
+                                </li><li class="moto-widget-menu-item">
+                                    <a href="works/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Works</a>
+                                
+                                    
+                                </li><li class="moto-widget-menu-item">
+                                    <a href="contacts/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Contacts</a>
+                                </li>        </ul>
+                            </div>
+
+                             <div id="wid_1520489298_l536yj0wd" data-widget-id="wid_1520489298_l536yj0wd" class="moto-widget moto-widget-social-links-extended moto-preset-default moto-align-center moto-spacing-top-small moto-spacing-right-small moto-spacing-bottom-auto moto-spacing-left-small  " data-widget="social_links_extended" data-preset="default">
+                            <ul class="moto-widget-social-links-extended__list">
+                                <li class="moto-widget-social-links-extended__item moto-widget-social-links-extended__item-1">
+                                    <a href="https://m.facebook.com/shettysaa/" class="moto-widget-social-links-extended__link" target="_blank" >
+                                        <span class="moto-widget-social-links-extended__icon fa fa-facebook"></span>
+                                    </a>
+                                </li>
+                               
+                                <li class="moto-widget-social-links-extended__item moto-widget-social-links-extended__item-3">
+                                    <a href="#" class="moto-widget-social-links-extended__link" target="_blank" >
+                                        <span class="moto-widget-social-links-extended__icon fa fa-google-plus"></span>
+                                    </a>
+                                </li>
+                                <li class="moto-widget-social-links-extended__item moto-widget-social-links-extended__item-4">
+                                    <a href="https://www.instagram.com/shettyproduction/?hl=en" class="moto-widget-social-links-extended__link" target="_blank" >
+                                        <span class="icon-instagram"></span>
+                                    </a>
+                                </li>
+                                <li class="moto-widget-social-links-extended__item moto-widget-social-links-extended__item-4">
+                                    <a href="https://twitter.com/shettyproducti1" class="moto-widget-social-links-extended__link" target="_blank" >
+                                        <span class="icon-twitter-letter-logo"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <style type="text/css">
+                        </style>
+                    </div>
+                     <!--    <div class="social-list">
+                    <span class="social-list__text">Find us here:</span>
+                    <ul class="social-list__icons">
+                        <li><a href="https://www.facebook.com"><i class="icon-facebook-logo"></i></a></li>
+                        <li><a href="https://twitter.com/vehicle_hub"><i class="icon-twitter-letter-logo"></i></a></li>
+                        <li><a href="https://plus.google.com"><i class="icon-google-plus"></i></a></li>
+                        <li><a href="https://www.instagram.com/officialvehiclehub/"><i class="icon-instagram"></i></a></li>
+                    </ul>
+                </div> -->
+
+
+                        <div data-widget-id="wid__spacer__5aa0d309726b4" class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto "
+                        data-widget="spacer" data-preset="default" data-spacing="maaa" data-visible-on="mobile-v">
+                        <div class="moto-widget-spacer-block" style="height:15px"></div>
+                    </div><div class="moto-widget moto-widget-container moto-container_footer_566a97cc" data-widget="container" data-container="container" data-css-name="moto-container_footer_566a97cc"><div data-spacing="sasa" class="moto-widget moto-widget-row row-fixed moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-widget="row"><div class="container-fluid"><div class="row" data-container="container"><div class="moto-cell col-sm-12 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                        <div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_12" style="text-align: center;">© 2018 All rights reserved. Terms of use and <a data-action="page" data-id="10" class="moto-link" href="privacy-policy/index.html">Privacy Policy</a></a></p></div>
+                    </div></div></div></div></div></div></div>
+                </div>
+            </div>
+        </div>            
+    </footer>
+
+    <div data-moto-back-to-top-button class="moto-back-to-top-button">
+        <a ng-click="toTop($event)" class="moto-back-to-top-button-link">
+            <span class="moto-back-to-top-button-icon fa"></span>
+        </a>
+    </div>
+    <script src="mt-includes/js/website.assets.min0059.js?_build=1520602126" type="text/javascript" data-cfasync="false"></script>
+    <script type="text/javascript" data-cfasync="false">
+        var websiteConfig = websiteConfig || {};
+        websiteConfig.address = 'index.html';
+        websiteConfig.apiUrl = 'api.json';
+        websiteConfig.preferredLocale = 'en_US';
+        websiteConfig.preferredLanguage = websiteConfig.preferredLocale.substring(0, 2);
+        websiteConfig.back_to_top_button = {"topOffset":300,"animationTime":500,"type":"theme"};
+        websiteConfig.popup_preferences = {"loading_error_message":"The content could not be loaded."};
+        websiteConfig.lazy_loading = {"enabled":true};
+        angular.module('website.plugins', []);
+    </script>
+    <script src="mt-includes/js/website.mind248.js?_build=1520602116" type="text/javascript" data-cfasync="false"></script>
+
+
+
+    </body>
+    </html>

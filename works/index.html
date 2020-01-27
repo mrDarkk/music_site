@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="en" data-ng-app="website">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <title>Works</title>
+    <link rel="SHORTCUT ICON" href="../mt-demo/59400/59460/mt-content/uploads/2017/03/favicon-0884dae2.ico?_build=1520859681" type="image/vnd.microsoft.icon" />
+
+  <link href="../iconfont/style.css" rel="stylesheet">    
+    <link rel="canonical" href="index.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../mt-includes/css/assets.minc3a1.css?_build=1520602070"/>
+    <link rel="stylesheet" href="../mt-demo/59400/59460/mt-content/themes/mt-0884/css/stylesdae2.css?_build=1520859681"/>
+    <style>
+    @import url(http://fonts.googleapis.com/css?family=Comfortaa:300,regular,700|Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic|Oswald:200,300,regular,500,600,700&amp;subset=cyrillic-ext,greek,vietnamese,cyrillic,latin,latin-ext,greek-ext);
+</style>
+<link rel="stylesheet" href="../mt-demo/59400/59460/mt-content/assets/styles7e87.css?_build=1520606353" id="moto-website-style"/>
+
+
+ <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.transitions.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/apps.css">
+    <link rel="stylesheet" href="assets/css/plyr.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCQz2ZaygiHbfAqQa2o66Ja2EtXVRooAQE",
+    authDomain: "shettyproduction-fce8c.firebaseapp.com",
+    databaseURL: "https://shettyproduction-fce8c.firebaseio.com",
+    projectId: "shettyproduction-fce8c",
+    storageBucket: "shettyproduction-fce8c.appspot.com",
+    messagingSenderId: "437140535080"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script type="text/javascript">
+
+
+
+    window.onload = function() {
+        var count =0;
+        //audio
+     
+      firebase.database().ref('audioFile/').once('value').then(function(snapshot) {
+         snapshot.forEach(function(userSnapshot) {
+        var username = userSnapshot.val();
+         
+         //console.log(username);
+        
+        //var before = document.getElementById("gallery").innerHTML;
+        
+         firebase.storage().ref('photoImg/'+username.Url+'').getDownloadURL().then(function(url) {
+             var test = url;
+             //alert(url);
+                //document.getElementById("test_pic").src = test;
+               //  console.log(test);
+                    // djsfdbfsdbl
+
+                     firebase.storage().ref('photoImg/'+username.Url_img+'.jpg').getDownloadURL().then(function(url) {
+             var test1 = url;
+             //alert(url);
+                //document.getElementById("test_pic").src = test;
+                // console.log(test1);
+
+
+                  var before = document.getElementById("song_track").innerHTML;
+
+                  document.getElementById("song_track").innerHTML= before +
+                  ' <div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="'+count+'" data-song="'+test+'" data-cover="'+test1+'">\
+                                                <div class="song-meta-data">\
+                                                    <span class="song-title">'+username.name+'</span>\
+                                                    <span class="song-artist">'+username.subname+'</span>\
+                                                </div>\
+                                                <div class="play-now">\
+                                                    <a class="btn btn-sm btn-black"><span class="normal-state">Play Now</span><span class="play-state">Pause</span></a>\
+                                                </div>\
+                                            </div> ';
+                                      count++;
+
+                                      var c= count;
+
+
+                                    //  console.log(c);
+
+                                    if (count ==c)
+                                    {
+                                        var songs = $('.amplitude-song-container');
+    var songObj = [];
+
+    songs.each(function () {
+        var songUrl = $(this).data('song');
+        var songCover = $(this).data('cover');
+        var songName = $(this).find('.song-title').html();
+        var songArtist = $(this).find('.song-artist').html();
+
+        var item = {}
+        item["name"] = songName;
+        item["artist"] = songArtist;
+        item["url"] = songUrl;
+        item["cover_art_url"] = songCover;
+
+        songObj.push(item);
+    });
+
+    Amplitude.init({
+        "songs": songObj,
+        "playlists": {
+            "rock_and_roll": [
+                0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+            ]
+        }
+    });
+
+    $('.player-track-list-block').slimScroll({
+        height: $('#player-one').outerHeight()
+    });
+
+    $("#playListBtn").on('click', function(){
+        $(".slimScrollDiv").slideToggle("slow");
+    });
+
+    // Get the current width of the slider
+    var sliderWidth = $('[type=range]').width();
+    // Remove previously created style elements
+    $('.custom-style-element-related-to-range').remove();
+    // Add our updated styling
+    $('<style class="custom-style-element-related-to-range">input[type="range"]::-webkit-slider-thumb { box-shadow: -' + sliderWidth + 'px 0 0 ' + sliderWidth + 'px;}<style/>').appendTo('head');
+
+                                    }
+         }).catch(function(error) {
+
+         });
+       //sdjfskflsdkgh
+
+
+         }).catch(function(error) {
+
+         });
+       
+        
+
+    });
+        });
+
+
+    };
+
+    
+
+  </script>
+
+
+
+
+</head>
+<body class="moto-background">
+
+
+
+
+    <div class="page">
+
+        <header id="section-header" class="header moto-section" data-widget="section" data-container="section">
+                <div data-spacing="mama" data-bg-image="2017/03/mt-0884-about-header.jpg" style="background-image:url(../mt-demo/59400/59460/mt-content/uploads/2017/03/header1.jpg);background-position:top;background-repeat:no-repeat;background-size:cover;" class="moto-widget moto-widget-block moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-medium moto-spacing-left-auto" data-widget="block">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="moto-cell col-sm-12" data-container="container"><div class="moto-widget moto-widget-row row-fixed moto-justify-content_center" data-widget="row"><div class="container-fluid"><div class="row"><div class="moto-cell col-sm-2" data-container="container"><div data-spacing="zaaa" class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-zero moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_1"><span class="moto-color_custom5"></span><a class="moto-link" data-id="9" data-action="page" href="../index.html">Shettyproduction</a></p></div></div></div><div class="moto-cell col-sm-10" data-container="container"><div data-widget-id="wid__menu__5aa682449d783" class="moto-widget moto-widget-menu moto-preset-default moto-align-right moto-align-center_mobile-h moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-preset="default" data-widget="menu">
+                                <a href="#" class="moto-widget-menu-toggle-btn"><i class="moto-widget-menu-toggle-btn-icon fa fa-bars"></i></a>
+                                <ul class="moto-widget-menu-list moto-widget-menu-list_horizontal">
+                                    <li class="moto-widget-menu-item moto-widget-menu-item-has-submenu">
+                                        <a href="../about/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-widget-menu-link-submenu moto-widget-menu-link-level-1 moto-link">About<span class="fa moto-widget-menu-link-arrow"></span></a>
+                                       <!--  <ul class="moto-widget-menu-sublist">
+                                            <li class="moto-widget-menu-item">
+                                                <a href="../events/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-2 moto-link">Events</a>
+                                            </li>
+                                            <li class="moto-widget-menu-item moto-widget-menu-item-has-submenu">
+                                                <a href="../news/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-2 moto-widget-menu-link-submenu moto-link">News<span class="fa moto-widget-menu-link-arrow"></span></a>
+                                                <ul class="moto-widget-menu-sublist">
+
+                                                    <li class="moto-widget-menu-item">
+                                                        <a href="../contacts/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-3 moto-link">Contacts</a>
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li class="moto-widget-menu-item">
+                                                <a href="../sound-design/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-2 moto-link">Sound design</a>
+                                            </li>
+                                        </ul>
+ -->
+                                    </li><li class="moto-widget-menu-item">
+                                        <a href="../engineers/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Artists</a>
+                                    </li><li class="moto-widget-menu-item">
+                                        <a href="../studio/index.html"   data-action="page"  class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-widget-menu-link-submenu moto-widget-menu-link-level-1 moto-link">Studio</a>
+                                    </li><li class="moto-widget-menu-item">
+                                        <a href="../services/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Services</a>
+                                    </li><li class="moto-widget-menu-item">
+                                        <a href="../works/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-widget-menu-link-submenu moto-widget-menu-link-active moto-link">Works</a>
+                                    </li>
+
+                                    <li class="moto-widget-menu-item">
+                                        <a href="../contacts/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Contacts</a>
+                                    </li>        </ul>
+                                </div></div></div></div></div></div>
+                            </div>
+                        </div>
+                    </div>            
+                </header>
+
+            
+
+
+
+
+
+        
+    <!-- Page Header End -->
+
+    <div class="main-wrap">
+        <!-- About Album -->
+        <div class="section album-info-section section-padding">
+            
+        </div>
+        <!-- About Album End -->
+
+        <!-- Track List -->
+        <div class="section tracks-section text-white">
+            <div class="overlay section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-xs-12">
+                            <div class="section-header text-center">
+                                <h3 class="section-title">Tracklist</h3>
+                                <p class="section-subtext">we trying hard to make your fresh mind we trying hard to make your fresh mind</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="music-wrap">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-5 col-xs-6">
+                                        <div id="player-one" class="player-main-block">
+                                            <div class="album-art-block">
+                                                <div class="track-meta-info" id="meta-container">
+                                                    <span class="song-name" amplitude-song-info="name" amplitude-main-song-info="true"></span>
+                                                    <div class="song-artist-album">
+                                                        - <span amplitude-song-info="artist" amplitude-main-song-info="true"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="album-art-space">
+                                                    <img class="img-responsive" amplitude-song-info="cover_art_url" amplitude-main-song-info="true" alt="..." />
+                                                </div>
+                                            </div>
+                                            <div id="amplitude-left" class="audio-controller-wrap">
+                                                <div id="player-left-bottom">
+
+                                                    <div class="time-controller-block" id="time-container">
+                                                        <div class="input-range-block">
+                                                            <span class="current-time">
+                                                            <span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>:<span class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
+                                                            </span>
+                                                            <div class="track-progress-wrap">
+                                                                <input type="range" class="amplitude-song-slider full-width" min="1" max="100" step="1" amplitude-main-song-slider="true" />
+                                                                <div class="track-progress"></div>
+                                                            </div>
+                                                            <span class="duration">
+                                                            <span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>:<span class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div id="control-container" class="control-container">
+                                                        <div id="central-control-container">
+                                                            <div id="central-controls" class="audio-controller-block">
+                                                                <div class="controller-common amplitude-prev" id="previous"></div>
+                                                                <div class="controller-common amplitude-play-pause play-pause-btn" amplitude-main-play-pause="true" id="play-pause"></div>
+                                                                <div class="controller-common amplitude-next" id="next"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="player-footer">
+                                                        <div class="volume-container">
+                                                            <i class="fa fa-volume-down" aria-hidden="true"></i>
+                                                            <input type="range" class="amplitude-volume-slider volume-slider-one" />
+                                                            <i class="fa fa-volume-up" aria-hidden="true"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-sm-7 col-xs-6">
+                                        <div class="player-track-list-block" id="song_track">
+                                     <!--         <div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="0" data-song="aa/01-title-staff-roll.mp3" data-cover="images/album-art/1.jpg">
+                                                <div class="song-meta-data">
+                                                    <span class="song-title">One Dance</span>
+                                                    <span class="song-artist">DRAKE FT WIZKID &amp; KYLA</span>
+                                                </div>
+                                                <div class="play-now">
+                                                    <a class="btn btn-sm btn-black"><span class="normal-state">Play Now</span><span class="play-state">Pause</span></a>
+                                                </div>
+                                            </div> 
+
+                                            <div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="1" data-song="aa/02-title-staff-roll.mp3" data-cover="images/album-art/2.jpg">
+                                                <div class="song-meta-data">
+                                                    <span class="song-title">One Dance</span>
+                                                    <span class="song-artist">DRAKE FT WIZKID &amp; KYLA</span>
+                                                </div>
+                                                <div class="play-now">
+                                                    <a class="btn btn-sm btn-black"><span class="normal-state">Play Now</span><span class="play-state">Pause</span></a>
+                                                </div>
+                                            </div> 
+                                       -->
+                                        </div>
+                                    </div>
+                                </div>
+ 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Track List End -->
+
+        
+
+        <!-- Latest Music video -->
+        <div class="section section-padding" id="videotrack">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-xs-12">
+                        <div class="section-header text-center">
+                            <h3 class="section-title">Popular Video</h3>
+                            <p class="section-subtext">we trying hard to make your fresh mind we trying hard to make your fresh mind</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="plyr-video">
+                            <div data-type="youtube" data-video-id="8AuPDJ9dNFg"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <br><br>
+                <br>
+
+            <div class="col-xs-12 text-center">
+                        <a class="btn btn-black btn-lg" href="index2.html">View All Video</a>
+                    </div>
+
+
+        </div>
+        <!-- Latest Music video End -->
+
+
+
+    </div>
+
+        <footer id="section-footer" class="footer moto-section" data-widget="section" data-container="section" data-moto-sticky="{mode:'smallHeight', direction:'bottom'}">
+        <div style="" data-spacing="aaaa" class="moto-widget moto-widget-block moto-bg-color_custom2 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="block">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="moto-cell col-sm-12" data-container="container"><div data-widget-id="wid__spacer__5aa0d3096ffe2" class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto "
+                        data-widget="spacer" data-preset="default" data-spacing="maaa" data-visible-on="mobile-v">
+                        <div class="moto-widget-spacer-block" style="height:15px"></div>
+                    </div><div data-spacing="zasa" class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-zero moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-widget="text" data-preset="default"><div class="moto-widget-text-content moto-widget-text-editable"><p style="text-align: center;" class="moto-text_system_1"><span class="moto-color_custom5">.</span><a class="moto-link" data-id="9" data-action="page" href="../index.html">Shettyproduction</a><br></p></div></div><div data-widget-id="wid__menu__5aa0d30970ae4" class="moto-widget moto-widget-menu moto-preset-2 moto-align-center moto-align-center_mobile-h moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-preset="2" data-widget="menu">
+                        <a href="#" class="moto-widget-menu-toggle-btn"><i class="moto-widget-menu-toggle-btn-icon fa fa-bars"></i></a>
+                        <ul class="moto-widget-menu-list moto-widget-menu-list_horizontal">
+                            <li class="moto-widget-menu-item">
+                                <a href="../about/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1  moto-link">About</a>
+                            </li><li class="moto-widget-menu-item">
+                                <a href="../engineers/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1  moto-link"> Artists</a>
+                            </li><li class="moto-widget-menu-item">
+                                <a href="../studio/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Studio</a>
+                            </li><li class="moto-widget-menu-item">
+                                <a href="../services/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Services</a>
+                            </li><li class="moto-widget-menu-item">
+                                <a href="../works/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-widget-menu-link-active moto-link">Works</a>
+                            </li>
+
+                            <li class="moto-widget-menu-item">
+                                <a href="../contacts/index.html"   data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-link">Contacts</a>
+                            </li>        </ul>
+                        </div>
+
+                         <div id="wid_1520489298_l536yj0wd" data-widget-id="wid_1520489298_l536yj0wd" class="moto-widget moto-widget-social-links-extended moto-preset-default moto-align-center moto-spacing-top-small moto-spacing-right-small moto-spacing-bottom-auto moto-spacing-left-small  " data-widget="social_links_extended" data-preset="default">
+                            <ul class="moto-widget-social-links-extended__list">
+                                <li class="moto-widget-social-links-extended__item moto-widget-social-links-extended__item-1">
+                                    <a href="https://m.facebook.com/shettysaa/" class="moto-widget-social-links-extended__link" target="_blank" >
+                                        <span class="moto-widget-social-links-extended__icon fa fa-facebook"></span>
+                                    </a>
+                                </li>
+                               
+                                <li class="moto-widget-social-links-extended__item moto-widget-social-links-extended__item-3">
+                                    <a href="#" class="moto-widget-social-links-extended__link" target="_blank" >
+                                        <span class="moto-widget-social-links-extended__icon fa fa-google-plus"></span>
+                                    </a>
+                                </li>
+                                <li class="moto-widget-social-links-extended__item moto-widget-social-links-extended__item-4">
+                                    <a href="https://www.instagram.com/shettyproduction/?hl=en" class="moto-widget-social-links-extended__link" target="_blank" >
+                                        <span class="icon-instagram"></span>
+                                    </a>
+                                </li>
+                                <li class="moto-widget-social-links-extended__item moto-widget-social-links-extended__item-4">
+                                    <a href="https://twitter.com/shettyproducti1" class="moto-widget-social-links-extended__link" target="_blank" >
+                                        <span class="icon-twitter-letter-logo"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <style type="text/css">
+                        </style>
+                    </div>
+
+
+                    <div data-widget-id="wid__spacer__5aa0d309726b4" class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto "
+                    data-widget="spacer" data-preset="default" data-spacing="maaa" data-visible-on="mobile-v">
+                    <div class="moto-widget-spacer-block" style="height:15px"></div>
+                </div><div class="moto-widget moto-widget-container moto-container_footer_566a97cc" data-widget="container" data-container="container" data-css-name="moto-container_footer_566a97cc"><div data-spacing="sasa" class="moto-widget moto-widget-row row-fixed moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-widget="row"><div class="container-fluid"><div class="row" data-container="container"><div class="moto-cell col-sm-12 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column"><div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                    <div class="moto-widget-text-content moto-widget-text-editable"><p class="moto-text_system_12" style="text-align: center;">© 2018 All rights reserved. Terms of use and <a data-action="page" data-id="10" class="moto-link" ">Privacy Policy</a></a></p></div>
+                </div></div></div></div></div></div></div>
+            </div>
+        </div>
+    </div>            
+    </footer>
+
+    <div data-moto-back-to-top-button class="moto-back-to-top-button">
+        <a ng-click="toTop($event)" class="moto-back-to-top-button-link">
+            <span class="moto-back-to-top-button-icon fa"></span>
+        </a>
+    </div>
+    <script src="../mt-includes/js/website.assets.min0059.js?_build=1520602126" type="text/javascript" data-cfasync="false"></script>
+    <script type="text/javascript" data-cfasync="false">
+        var websiteConfig = websiteConfig || {};
+        websiteConfig.address = '../index.html';
+        websiteConfig.apiUrl = '../api.json';
+        websiteConfig.preferredLocale = 'en_US';
+        websiteConfig.preferredLanguage = websiteConfig.preferredLocale.substring(0, 2);
+        websiteConfig.back_to_top_button = {"topOffset":300,"animationTime":500,"type":"theme"};
+        websiteConfig.popup_preferences = {"loading_error_message":"The content could not be loaded."};
+        websiteConfig.lazy_loading = {"enabled":true};
+        angular.module('website.plugins', []);
+    </script>
+    <script src="../mt-includes/js/website.mind248.js?_build=1520602116" type="text/javascript" data-cfasync="false"></script>
+
+      <script data-cfasync="false" src="../../cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plyr.js"></script>
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/tether.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/amplitude.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
+    <script src="js/map.js"></script>
+    <script src="js/custom.js"></script>
+
+
+
+</body>
+
+<!-- Mirrored from template59460.motopreview.com/works/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:37:02 GMT -->
+</html>
